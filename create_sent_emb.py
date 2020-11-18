@@ -5,13 +5,17 @@ from gensim.models import FastText
 import logging
 logging.basicConfig(format='%(asctime)s : %(threadName)s : %(levelname)s : %(message)s', level=logging.INFO)
 
-lookup = FastText.load_fasttext_format('cc.vi.300.bin', encoding='utf-8')
+w2v_model = "H:/Vietnamese word representations/Word_vector_data/VnNewsWord2Vec/VnNewsWord2Vec.bin"
+
+lookup = FastText.load_fasttext_format(w2v_model, encoding='utf-8')
 
 sentences = []
 s = IndexedList(sentences)
 print(len(s))
 
-with open('tokenized_titles_cleaned', 'r', encoding='utf-8') as file:
+title_file = 'H:/Vietnamese word representations/News-titles-embedding/Data/tokenized_titles_cleaned'
+
+with open(title_file, 'r', encoding='utf-8') as file:
     for line in file:
         sentences.append(line.split())
 

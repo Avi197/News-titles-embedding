@@ -1,0 +1,5 @@
+
+model/sent2vec
+model/sent2vec.wv.vectors.npy
+model/sent2vec.wv.vectors_ngrams.npy
+model/sent2vec.wv.vectors_vocab.npy
